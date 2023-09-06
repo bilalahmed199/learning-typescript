@@ -6,7 +6,7 @@
 // console.log('Sum of two numbers is: ', sum)
 // =====================
 
-function cuteLogic1() {
+function findMultipleCharactors() {
   console.log("==== Find no. of abc in a string ====");
   var test: string = "debabcabcabdaacdfabc";
   // var test: string = "aabc";
@@ -25,9 +25,9 @@ function cuteLogic1() {
   }
 }
 
-// cuteLogic1();
+// findMultipleCharactors();
 
-function cuteLogic2() {
+function comparingTwoStrings() {
   console.log("==== Comparing two strings ====");
   var string1: string = "abcdasdadasdcda";
   var string2: string = "abcdasaasdawfaa";
@@ -40,7 +40,7 @@ function cuteLogic2() {
   }
 }
 
-// cuteLogic2();
+// comparingTwoStrings();
 
 // two strings
 // find common thing in both strings
