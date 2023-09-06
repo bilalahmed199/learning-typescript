@@ -54,6 +54,7 @@ function findCommonCharacters() {
     for (let j = 0; j < str1.length; j++) {
       if (str1[i] == str2[j]) {
         common_data.push(str1[i])
+        // below line will remove matched value from str2
         str2 = str2.slice(0, j) + str2.slice(j+1) 
         break
       }
