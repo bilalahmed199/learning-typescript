@@ -118,16 +118,16 @@ function arrayIndexCount() {
 // create 2 dimensional array by taking inout from user
 // and generating array based on the sqrt of given number
 function matrixArray() {
-  let num: number = 25;
+  let num: number = 22;
   let matrix_size: number = Math.sqrt(num);
-  console.log("matrix size of array is: ", matrix_size);
-
+  
   // creating 2D array
   // verify if matrix size is not a floating value
   if (matrix_size != Math.floor(matrix_size)) {
     console.log("'num' must be an integer number");
   } 
   else {
+    console.log("matrix size of array is: ", matrix_size);
     let custom_array: number[][] = Array.from(Array(matrix_size), () =>
       new Array(matrix_size).fill(0)
     );
