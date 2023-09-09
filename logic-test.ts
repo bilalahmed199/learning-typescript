@@ -123,21 +123,27 @@ function matrixArray() {
   console.log("matrix size of array is: ", matrix_size);
 
   // creating 2D array
-  let custom_array: number[][] = Array.from(Array(matrix_size), () =>
-    new Array(matrix_size).fill(0)
-  );
-  console.log('Array before data fill: ',custom_array);
+  // verify if matrix size is not a floating value
+  if (matrix_size != Math.floor(matrix_size)) {
+    console.log("'num' must be an integer number");
+  } 
+  else {
+    let custom_array: number[][] = Array.from(Array(matrix_size), () =>
+      new Array(matrix_size).fill(0)
+    );
+    console.log("Array before data fill: ", custom_array);
 
-  // fill data in array
-  let fill_data = 1;
-  for (let i: number = 0; i < matrix_size; i++) {
-    for (let j: number = 0; j < matrix_size; j++) {
-      if (custom_array[i][j] == 0) {
-        custom_array[i][j] = fill_data;
-        fill_data += 1;
+    // fill data in array
+    let fill_data = 1;
+    for (let i: number = 0; i < matrix_size; i++) {
+      for (let j: number = 0; j < matrix_size; j++) {
+        if (custom_array[i][j] == 0) {
+          custom_array[i][j] = fill_data;
+          fill_data += 1;
+        }
       }
     }
+    console.log("Array after data fill: ", custom_array);
   }
-  console.log('Array after data fill: ',custom_array);
 }
 matrixArray();
