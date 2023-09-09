@@ -103,14 +103,41 @@ function arrayIndexCount() {
   let array1: number[][] = [[0, 1, 2], [1, 2], [3, 4, 5, 6], [2]];
   let length_array1: number[];
 
-  let array1_index_length:number[]=[];
+  let array1_index_length: number[] = [];
   for (let i = 0; i < array1.length; i++) {
-    array1_index_length.push(array1[i].length)
-    console.log(array1[i])
+    array1_index_length.push(array1[i].length);
+    console.log(array1[i]);
   }
-  length_array1 = Array(array1.length)
-  console.log('lenght of array1 is: ', length_array1)
-  console.log('per index length of array1 is: ',array1_index_length)
-
+  length_array1 = Array(array1.length);
+  console.log("lenght of array1 is: ", length_array1);
+  console.log("per index length of array1 is: ", array1_index_length);
 }
 // arrayIndexCount();
+
+// ==============================
+// create 2 dimensional array by taking inout from user
+// and generating array based on the sqrt of given number
+function matrixArray() {
+  let num: number = 25;
+  let matrix_size: number = Math.sqrt(num);
+  console.log("matrix size of array is: ", matrix_size);
+
+  // creating 2D array
+  let custom_array: number[][] = Array.from(Array(matrix_size), () =>
+    new Array(matrix_size).fill(0)
+  );
+  console.log('Array before data fill: ',custom_array);
+
+  // fill data in array
+  let fill_data = 1;
+  for (let i: number = 0; i < matrix_size; i++) {
+    for (let j: number = 0; j < matrix_size; j++) {
+      if (custom_array[i][j] == 0) {
+        custom_array[i][j] = fill_data;
+        fill_data += 1;
+      }
+    }
+  }
+  console.log('Array after data fill: ',custom_array);
+}
+matrixArray();
