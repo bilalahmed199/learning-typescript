@@ -118,13 +118,13 @@ function arrayIndexCount() {
 // create 2 dimensional array by taking inout from user
 // and generating array based on the sqrt of given number
 function matrixArray() {
-  let num: number = 22;
+  let num: number = 143;
   let matrix_size: number = Math.sqrt(num);
   
   // creating 2D array
   // verify if matrix size is not a floating value
   if (matrix_size != Math.floor(matrix_size)) {
-    console.log("'num' must be an integer number");
+    console.log("matrix size must be a whole number");
   } 
   else {
     console.log("matrix size of array is: ", matrix_size);
@@ -146,4 +146,27 @@ function matrixArray() {
     console.log("Array after data fill: ", custom_array);
   }
 }
-matrixArray();
+// matrixArray();
+
+
+// ==============================
+// find 2nd largest number in an array
+
+function secondLargestNumber(){
+  let array:number [] = [1,2,3,4,5,8,20,2]
+  for(let index:number =0; index<array.length; index++){
+    if(array[index] > array[index+1]){
+      let largest:number [] = []
+      largest.push(array[index])
+      console.log(largest)
+      break;
+    }
+       elseif(){
+
+       }
+      console.log('pass')
+      console.log(array[index])
+    }
+  }
+// }
+secondLargestNumber()
