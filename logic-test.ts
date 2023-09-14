@@ -151,6 +151,7 @@ function matrixArray() {
 
 // ==============================
 // find 2nd largest number in an array
+// not completed yet
 
 function secondLargestNumber(){
   let array:number [] = [1,2,3,4,5,8,20,2]
@@ -175,16 +176,23 @@ function secondLargestNumber(){
 // bubble sort: sort the array from smallest to largest value
 
 function bubbleSort(){
-  let temp = 0;
-  let a = 1;
-  let b = 2;
 
-  temp = a;
-  a = b;
-  b = temp;
+let array:number [] = [7,4,8,1,2];
+let temp = 0;
+let n =5;
 
-  console.log('new a is: ',a)
-  console.log('new b is: ',b)
+for (let i=0; i< n-1; i++){
+  for(let j=0; j< n-1; j++){
+    if(array[i]>array[j+1]){
+      temp = array[i];
+      array[i] = array[i+1];
+      array[i+1] = temp;
+    }
+  }
+  console.log([array])
+}
+console.log(temp)
+
 }
 
 bubbleSort()
