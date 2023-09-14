@@ -161,12 +161,30 @@ function secondLargestNumber(){
       console.log(largest)
       break;
     }
-       elseif(){
+      //  elseif(){
 
-       }
+      //  }
       console.log('pass')
       console.log(array[index])
     }
   }
-// }
-secondLargestNumber()
+// }>
+// secondLargestNumber()
+
+// ==============================
+// bubble sort: sort the array from smallest to largest value
+
+function bubbleSort(){
+  let temp = 0;
+  let a = 1;
+  let b = 2;
+
+  temp = a;
+  a = b;
+  b = temp;
+
+  console.log('new a is: ',a)
+  console.log('new b is: ',b)
+}
+
+bubbleSort()
