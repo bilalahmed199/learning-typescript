@@ -118,7 +118,7 @@ function arrayIndexCount() {
 // create 2 dimensional array by taking inout from user
 // and generating array based on the sqrt of given number
 function matrixArray() {
-  let num: number = 143;
+  let num: number = 9;
   let matrix_size: number = Math.sqrt(num);
   
   // creating 2D array
@@ -169,7 +169,7 @@ function secondLargestNumber(){
       console.log(array[index])
     }
   }
-// }>
+
 // secondLargestNumber()
 
 // ==============================
@@ -177,22 +177,39 @@ function secondLargestNumber(){
 
 function bubbleSort(){
 
-let array:number [] = [7,4,8,1,2];
-let temp = 0;
-let n =5;
+// let array:number [] = [7,11,9,2,17,4];
+let array:number [] = [1,2,3,2,17,4];
+console.log('Array before bubble sort: ',array)
 
-for (let i=0; i< n-1; i++){
-  for(let j=0; j< n-1; j++){
-    if(array[i]>array[j+1]){
-      temp = array[i];
-      array[i] = array[i+1];
-      array[i+1] = temp;
+let temp = 0;
+let n = 6;
+let isSorted:boolean = false;
+
+for (let i=0; i < n-1; i++)    // for number of passes
+{
+  console.log('Working on pass number ', i + 1,'\n')
+
+  
+  isSorted = true;    // if isSorted = true, then it will not go into next loop as array already sorted
+
+  for(let j=0; j< n-1-i; j++)   // for number of comparisons
+  {
+    if(array[j]>array[j+1])
+    {
+   temp = array[j];
+      array[j] = array[j+1];
+      array[j+1] = temp;
+      isSorted = false;
     }
   }
-  console.log([array])
-}
-console.log(temp)
+  console.log('Array after bubble sort: ',array,'\n')
 
+  if(isSorted == true){
+    return;
+  }
+}
 }
 
 bubbleSort()
+
+// selection sort, insertion sort, quick sort, merge sort, heap sort: 
