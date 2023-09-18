@@ -176,7 +176,6 @@ function secondLargestNumber(){
 // bubble sort: sort the array from smallest to largest value
 
 function bubbleSort(){
-
 // let array:number [] = [7,11,9,2,17,4];
 let array:number [] = [1,2,3,2,17,4];
 console.log('Array before bubble sort: ',array)
