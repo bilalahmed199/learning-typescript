@@ -71,7 +71,7 @@ function findCommonCharacters() {
 function findLongestSubstring() {
   console.log("==== Find longest common substring ====");
   let str1: string = "abcdeefghhfaaaaa";
-  let str2: string = "abcaaaaadeefffxz";
+  let str2: string = "abcaaaaadeefffxv";
 
   let common_strings: string[] = [];
   let longest_common_string = "";
@@ -84,8 +84,10 @@ function findLongestSubstring() {
         i += 1;
       } else if (common_string != "") {
         common_strings.push(common_string);
-        if (common_string > longest_common_string)
+        
+        if (common_string > longest_common_string){
           str2 = str2.split(common_string).join("");
+        }
         longest_common_string = common_string;
         common_string = "";
         i -= 1;
@@ -184,12 +186,12 @@ let temp = 0;
 let n = 6;
 let isSorted:boolean = false;
 
-for (let i=0; i < n-1; i++)    // for number of passes
+for (let i=0; i < n-1; i++)    // for number of passes / iterations 
 {
   console.log('Working on pass number ', i + 1,'\n')
 
-  
-  isSorted = true;    // if isSorted = true, then it will not go into next loop as array already sorted
+  // if isSorted = true, then it will not go into next loop as array already sorted
+  isSorted = true;  
 
   for(let j=0; j< n-1-i; j++)   // for number of comparisons
   {
@@ -201,7 +203,7 @@ for (let i=0; i < n-1; i++)    // for number of passes
       isSorted = false;
     }
   }
-  console.log('Array after bubble sort: ',array,'\n')
+  console.log('Array after',  'pass number ',i+1 , 'bubble sort: ',array,'\n')
 
   if(isSorted == true){
     return;
