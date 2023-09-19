@@ -113,5 +113,5 @@ export function randomUserName() {
 }
 
 function randomInteger() {
-    return Math.floor(Math.random() * 101);
+  return Math.floor(Math.random() * 101);
 }

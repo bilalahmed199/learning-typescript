@@ -154,63 +154,46 @@ function matrixArray() {
 // ==============================
 // find 2nd largest number in an array
 // not completed yet
+console.log("==== Find 2nd largest number in an array ====");
 
-function secondLargestNumber(){
-  let array:number [] = [1,2,3,4,5,8,20,2]
-  for(let index:number =0; index<array.length; index++){
-    if(array[index] > array[index+1]){
-      let largest:number [] = []
-      largest.push(array[index])
-      console.log(largest)
-      break;
-    }
-      //  elseif(){
+function findSecondLargest(array: number[]): number {
+  const sortedArray = bubbleSort(array);
+  return sortedArray[sortedArray.length - 2];
+}
 
-      //  }
-      console.log('pass')
-      console.log(array[index])
-    }
-  }
-
-// secondLargestNumber()
+const sortedArray = bubbleSort([2, 3, 10, 19, 1, 12, 13, 14, 4]);
+console.log('The second largest number is ', findSecondLargest(sortedArray));
 
 // ==============================
 // bubble sort: sort the array from smallest to largest value
 
-function bubbleSort(){
-// let array:number [] = [7,11,9,2,17,4];
-let array:number [] = [1,2,3,2,17,4];
-console.log('Array before bubble sort: ',array)
+function bubbleSort(array: number[]): number[] {
+  console.log('Array before bubble sort: ', array);
 
-let temp = 0;
-let n = 6;
-let isSorted:boolean = false;
+  let temp: number = 0;
+  let isSorted: boolean = false;
 
-for (let i=0; i < n-1; i++)    // for number of passes / iterations 
-{
-  console.log('Working on pass number ', i + 1,'\n')
+  for (let i = 0; i < array.length - 1; i++) {
+    isSorted = true;
 
-  // if isSorted = true, then it will not go into next loop as array already sorted
-  isSorted = true;  
+    for (let j = 0; j < array.length - 1; j++) {
+      if (array[j] > array[j + 1]) {
+        temp = array[j];
+        array[j] = array[j + 1];
+        array[j + 1] = temp;
+        isSorted = false;
+      }
+    }
 
-  for(let j=0; j< n-1-i; j++)   // for number of comparisons
-  {
-    if(array[j]>array[j+1])
-    {
-   temp = array[j];
-      array[j] = array[j+1];
-      array[j+1] = temp;
-      isSorted = false;
+    if (isSorted) {
+      console.log('Array after bubble sort: ', array);
+      return array;
     }
   }
-  console.log('Array after',  'pass number ',i+1 , 'bubble sort: ',array,'\n')
 
-  if(isSorted == true){
-    return;
-  }
-}
+  return array;
 }
 
-bubbleSort()
+bubbleSort([7,11,9,2,17,4])
 
 // selection sort, insertion sort, quick sort, merge sort, heap sort: 
