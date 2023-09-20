@@ -150,20 +150,6 @@ function matrixArray() {
 }
 // matrixArray();
 
-
-// ==============================
-// find 2nd largest number in an array
-// not completed yet
-console.log("==== Find 2nd largest number in an array ====");
-
-function findSecondLargest(array: number[]): number {
-  const sortedArray = bubbleSort(array);
-  return sortedArray[sortedArray.length - 2];
-}
-
-const sortedArray = bubbleSort([2, 3, 10, 19, 1, 12, 13, 14, 4]);
-console.log('The second largest number is ', findSecondLargest(sortedArray));
-
 // ==============================
 // bubble sort: sort the array from smallest to largest value
 
@@ -194,6 +180,21 @@ function bubbleSort(array: number[]): number[] {
   return array;
 }
 
-bubbleSort([7,11,9,2,17,4])
+// bubbleSort([7,11,9,2,17,4])
 
-// selection sort, insertion sort, quick sort, merge sort, heap sort: 
+// selection sort, insertion sort, quick sort, merge sort, heap sort:
+
+// ==============================
+// find 2nd largest number in an array
+// not completed yet
+console.log("==== Find 2nd largest number in an array ====");
+
+function findSecondLargest(array: number[]): number {
+  const sortedArray = bubbleSort(array);
+  const secondLargestNum:number = sortedArray[sortedArray.length - 2]
+  console.log('The second largest number is ', secondLargestNum);
+  return secondLargestNum;
+}
+
+
+findSecondLargest([1,2,3,4,6,8,4])
