@@ -158,10 +158,8 @@ function bubbleSort(array: number[]): number[] {
 
   let temp: number = 0;
   let isSorted: boolean = false;
-
   for (let i = 0; i < array.length - 1; i++) {
     isSorted = true;
-
     for (let j = 0; j < array.length - 1; j++) {
       if (array[j] > array[j + 1]) {
         temp = array[j];
@@ -170,13 +168,11 @@ function bubbleSort(array: number[]): number[] {
         isSorted = false;
       }
     }
-
     if (isSorted) {
       console.log('Array after bubble sort: ', array);
       return array;
     }
   }
-
   return array;
 }
 
@@ -195,6 +191,32 @@ function findSecondLargest(array: number[]): number {
   console.log('The second largest number is ', secondLargestNum);
   return secondLargestNum;
 }
+// findSecondLargest([1, 2, 3, 4, 6, 8, 4])
 
 
-findSecondLargest([1,2,3,4,6,8,4])
+
+function evenNumbers() {
+  let array: number[] = []
+  for (let i = 1; i <= 10; i++){
+    if (i % 2 === 0) {
+      array.push(i)
+    }
+    console.log('Even numbers are: ', i)
+  }
+  console.log('Array of even numbers is: ', array )
+}
+// evenNumbers()
+
+function sumOfNumbers() {
+  let sumOfArray: any[] = []
+  let array: number[] = []
+  for (let i = 1; i <= 3; i++) {
+    array.push(i)
+  }
+  for (let j = 1; j <= 3; j++) {
+    // sumOfArray += array[j]
+    console.log('Array of numbers: ', array)
+    console.log('sum of array numbers: ', sumOfArray)
+  }
+}
+sumOfNumbers()
