@@ -208,15 +208,33 @@ function evenNumbers() {
 // evenNumbers()
 
 function sumOfNumbers() {
-  let sumOfArray: any[] = []
-  let array: number[] = []
-  for (let i = 1; i <= 3; i++) {
+  let sumOfArray = 0;
+  let array: number[] = [];
+
+  // create an array, i.e., [1,2,3,4,5] 
+  for (let i = 1; i <= 5; i++) {
     array.push(i)
   }
-  for (let j = 1; j <= 3; j++) {
-    // sumOfArray += array[j]
-    console.log('Array of numbers: ', array)
-    console.log('sum of array numbers: ', sumOfArray)
+
+  for (let j = 0; j < array.length; j++) {
+    sumOfArray += array[j]
   }
+
+  console.log('sum of array numbers: ', sumOfArray)
+  console.log('Array of numbers: ', array)
 }
-sumOfNumbers()
+// sumOfNumbers()
+
+function reverseOfString() {
+  let string = "abcde";
+  let reversedString = "";
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    reversedString += string[i];
+  }
+
+  console.log('Original string: ', string);
+  console.log('Reversed string: ', reversedString);
+}
+
+reverseOfString();
