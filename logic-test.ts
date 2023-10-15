@@ -183,7 +183,7 @@ function bubbleSort(array: number[]): number[] {
 // ==============================
 // find 2nd largest number in an array
 // not completed yet
-console.log("==== Find 2nd largest number in an array ====");
+// console.log("==== Find 2nd largest number in an array ====");
 
 function findSecondLargest(array: number[]): number {
   const sortedArray = bubbleSort(array);
@@ -192,7 +192,7 @@ function findSecondLargest(array: number[]): number {
   return secondLargestNum;
 }
 // findSecondLargest([1, 2, 3, 4, 6, 8, 4])
-
+// =================================
 
 
 function evenNumbers() {
@@ -206,6 +206,21 @@ function evenNumbers() {
   console.log('Array of even numbers is: ', array )
 }
 // evenNumbers()
+// =================================
+
+function reverseOfString() {
+  let string = "abcde";
+  let reversedString = "";
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    reversedString += string[i];
+  }
+
+  console.log('Original string: ', string);
+  console.log('Reversed string: ', reversedString);
+}
+// reverseOfString();
+// =================================
 
 function sumOfNumbers() {
   let sumOfArray = 0;
@@ -220,21 +235,33 @@ function sumOfNumbers() {
     sumOfArray += array[j]
   }
 
+  console.log('Array: ', array)
   console.log('sum of array numbers: ', sumOfArray)
-  console.log('Array of numbers: ', array)
 }
 // sumOfNumbers()
+// =================================
 
-function reverseOfString() {
-  let string = "abcde";
-  let reversedString = "";
+// program to find even number in array then multiply with 2 & add all numbers
 
-  for (let i = string.length - 1; i >= 0; i--) {
-    reversedString += string[i];
-  }
+function findEven_multiply_sumOfArray() {
+  let array = [1, 2, 3, 4, 5]
+  
+  // Step 1: finding even numbers
+  let evenNumbers = array.filter(number => number % 2 == 0)
+  console.log(evenNumbers)
+  
+  // Step 2: multiplying with 2 
+  let multiplyNumbers = evenNumbers.map(number => number * 2)
+  console.log(multiplyNumbers)
 
-  console.log('Original string: ', string);
-  console.log('Reversed string: ', reversedString);
+  // Step 3: adding all numbers
+  let addAllNumbers = multiplyNumbers.reduce((sum, number) => sum + number, 0)
+  console.log(addAllNumbers)
+  
+  // or 
+  //we can chain all methods
+  let sumOfArray = array.filter(num => num % 2 == 0).map(num => num * 2).reduce((sum, num) => sum + num, 0)
+  console.log(sumOfArray)
 }
 
-reverseOfString();
+findEven_multiply_sumOfArray()
