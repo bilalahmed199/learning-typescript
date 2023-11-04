@@ -246,6 +246,11 @@ function sumOfNumbers() {
 function findEven_multiply_sumOfArray() {
   let array = [1, 2, 3, 4, 5]
   
+  // dummy test
+  let names: string[] = ['a', 'b', 'd']
+  let dataFound = names.filter(data => data == 'b')
+  console.log(dataFound)
+
   // Step 1: finding even numbers
   let evenNumbers = array.filter(number => number % 2 == 0)
   console.log(evenNumbers)
