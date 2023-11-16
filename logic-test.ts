@@ -84,8 +84,8 @@ function findLongestSubstring() {
         i += 1;
       } else if (common_string != "") {
         common_strings.push(common_string);
-        
-        if (common_string > longest_common_string){
+
+        if (common_string > longest_common_string) {
           str2 = str2.split(common_string).join("");
         }
         longest_common_string = common_string;
@@ -122,13 +122,12 @@ function arrayIndexCount() {
 function matrixArray() {
   let num: number = 9;
   let matrix_size: number = Math.sqrt(num);
-  
+
   // creating 2D array
   // verify if matrix size is not a floating value
   if (matrix_size != Math.floor(matrix_size)) {
     console.log("matrix size must be a whole number");
-  } 
-  else {
+  } else {
     console.log("matrix size of array is: ", matrix_size);
     let custom_array: number[][] = Array.from(Array(matrix_size), () =>
       new Array(matrix_size).fill(0)
@@ -154,7 +153,7 @@ function matrixArray() {
 // bubble sort: sort the array from smallest to largest value
 
 function bubbleSort(array: number[]): number[] {
-  console.log('Array before bubble sort: ', array);
+  console.log("Array before bubble sort: ", array);
 
   let temp: number = 0;
   let isSorted: boolean = false;
@@ -169,7 +168,7 @@ function bubbleSort(array: number[]): number[] {
       }
     }
     if (isSorted) {
-      console.log('Array after bubble sort: ', array);
+      console.log("Array after bubble sort: ", array);
       return array;
     }
   }
@@ -187,23 +186,22 @@ function bubbleSort(array: number[]): number[] {
 
 function findSecondLargest(array: number[]): number {
   const sortedArray = bubbleSort(array);
-  const secondLargestNum:number = sortedArray[sortedArray.length - 2]
-  console.log('The second largest number is ', secondLargestNum);
+  const secondLargestNum: number = sortedArray[sortedArray.length - 2];
+  console.log("The second largest number is ", secondLargestNum);
   return secondLargestNum;
 }
 // findSecondLargest([1, 2, 3, 4, 6, 8, 4])
 // =================================
 
-
 function evenNumbers() {
-  let array: number[] = []
-  for (let i = 1; i <= 10; i++){
+  let array: number[] = [];
+  for (let i = 1; i <= 10; i++) {
     if (i % 2 === 0) {
-      array.push(i)
+      array.push(i);
     }
-    console.log('Even numbers are: ', i)
+    console.log("Even numbers are: ", i);
   }
-  console.log('Array of even numbers is: ', array )
+  console.log("Array of even numbers is: ", array);
 }
 // evenNumbers()
 // =================================
@@ -216,8 +214,8 @@ function reverseOfString() {
     reversedString += string[i];
   }
 
-  console.log('Original string: ', string);
-  console.log('Reversed string: ', reversedString);
+  console.log("Original string: ", string);
+  console.log("Reversed string: ", reversedString);
 }
 // reverseOfString();
 // =================================
@@ -226,17 +224,17 @@ function sumOfNumbers() {
   let sumOfArray = 0;
   let array: number[] = [];
 
-  // create an array, i.e., [1,2,3,4,5] 
+  // create an array, i.e., [1,2,3,4,5]
   for (let i = 1; i <= 5; i++) {
-    array.push(i)
+    array.push(i);
   }
 
   for (let j = 0; j < array.length; j++) {
-    sumOfArray += array[j]
+    sumOfArray += array[j];
   }
 
-  console.log('Array: ', array)
-  console.log('sum of array numbers: ', sumOfArray)
+  console.log("Array: ", array);
+  console.log("sum of array numbers: ", sumOfArray);
 }
 // sumOfNumbers()
 // =================================
@@ -244,29 +242,100 @@ function sumOfNumbers() {
 // program to find even number in array then multiply with 2 & add all numbers
 
 function findEven_multiply_sumOfArray() {
-  let array = [1, 2, 3, 4, 5]
-  
+  let array = [1, 2, 3, 4, 5];
+
   // dummy test
-  let names: string[] = ['a', 'b', 'd']
-  let dataFound = names.filter(data => data == 'b')
-  console.log(dataFound)
+  let names: string[] = ["a", "b", "d"];
+  let dataFound = names.filter((data) => data == "b");
+  console.log(dataFound);
 
   // Step 1: finding even numbers
-  let evenNumbers = array.filter(number => number % 2 == 0)
-  console.log(evenNumbers)
-  
-  // Step 2: multiplying with 2 
-  let multiplyNumbers = evenNumbers.map(number => number * 2)
-  console.log(multiplyNumbers)
+  let evenNumbers = array.filter((number) => number % 2 == 0);
+  console.log(evenNumbers);
+
+  // Step 2: multiplying with 2
+  let multiplyNumbers = evenNumbers.map((number) => number * 2);
+  console.log(multiplyNumbers);
 
   // Step 3: adding all numbers
-  let addAllNumbers = multiplyNumbers.reduce((sum, number) => sum + number, 0)
-  console.log(addAllNumbers)
-  
-  // or 
+  let addAllNumbers = multiplyNumbers.reduce((sum, number) => sum + number, 0);
+  console.log(addAllNumbers);
+
+  // or
   //we can chain all methods
-  let sumOfArray = array.filter(num => num % 2 == 0).map(num => num * 2).reduce((sum, num) => sum + num, 0)
-  console.log(sumOfArray)
+  let sumOfArray = array
+    .filter((num) => num % 2 == 0)
+    .map((num) => num * 2)
+    .reduce((sum, num) => sum + num, 0);
+  console.log(sumOfArray);
 }
 
-findEven_multiply_sumOfArray()
+findEven_multiply_sumOfArray();
+
+/////////////////Verify Required Permissions////////////////////////////
+
+let reqPermissions = ["test.view"];
+
+let userPermissions = {
+  user: { create: true, view: true },
+  patient: { create: true, view: false },
+};
+
+function verifyPermissions(reqPermission, userPermission): boolean {
+  let out = false;
+  for (let per of reqPermission) {
+    const resourse = per.split(".");
+    const resourseName = resourse[0];
+    const resourseAction = resourse[1];
+
+    // console.log(resourseName, resourseAction);
+
+    console.log(!!userPermission[resourseName], "BILAL");
+
+    if (!!userPermission[resourseName]) {
+      console.log("CONDITION true");
+    }
+    // out =
+    //   !!userPermission[resourseName] &&
+    //   !!userPermission[resourseName][resourseAction];
+    // if (!out) break;
+  }
+  return out;
+}
+// console.log(verifyPermissions(reqPermissions, userPermissions));
+
+/////////////// Calculate Average/////////////////
+
+var numbers: number[] = [4, 5, 1, 8, 9];
+
+function calculateAverage(numbers) {
+  let totalCount = numbers.length;
+  let sum = numbers.reduce((sum, num) => sum + num, 0);
+  let average = sum / totalCount;
+  return average;
+}
+
+const average = calculateAverage(numbers);
+console.log(`The average of the numbers is: ${average}`);
+
+/////////////// find maximum calories carried by an Elf/////////////////
+
+var elf1: number[] = [1000, 2000, 3000];
+var elf2: number[] = [4000];
+var elf3: number[] = [5000, 6000];
+var elf4: number[] = [8000, 7000, 9000]; //24k
+var elf5: number[] = [10000];
+
+const totalElf1 = elf1.reduce((sum, num) => sum + num, 0);
+const totalElf2 = elf2.reduce((sum, num) => sum + num, 0);
+const totalElf3 = elf3.reduce((sum, num) => sum + num, 0);
+const totalElf4 = elf4.reduce((sum, num) => sum + num, 0);
+const totalElf5 = elf5.reduce((sum, num) => sum + num, 0);
+
+console.log(totalElf1, totalElf2, totalElf3, totalElf4, totalElf5);
+
+const allCalories = [totalElf1, totalElf2, totalElf3, totalElf4, totalElf5];
+console.log(allCalories);
+let sortedArray: number[] = allCalories.sort((a, b) => (a > b ? 1 : -1));
+console.log(sortedArray);
+console.log("Largest Number => ", sortedArray[sortedArray.length - 1]);
