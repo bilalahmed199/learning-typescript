@@ -16,8 +16,8 @@ function breakingRecords(scores: number[]): number[] {
     }
   })
 
-  count[0] = maxCount
-  count[1] = minCount
+  count.push(maxCount)
+  count.push(minCount)
   return count
 }
 
