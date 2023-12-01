@@ -1,19 +1,15 @@
-// not solved yet
+// not solved by me
 
 function kangaroo(x1: number, v1: number, x2: number, v2: number): string {
   // Write your code here
-  let jumps = 0
-  let k1DistancePerJump = x1 + v1
-  let k2DistancePerJump = x2 + v2
-
-  console.log(`k1 jump distance: ${k1DistancePerJump}`)
-  console.log(`k2 jump distance: ${k2DistancePerJump}`)
-  if (x2 > x1 && v2 > v1) {
+  if (v1 === v2 && x1 !== x2) {
     return 'NO'
-  } else if (x2 < x1 && v2 > v1) {
+  } else if (v1 === v2 && x1 === x2) {
+    return 'YES'
+  } else if ((x2 - x1) / (v1 - v2) > 0 && (x2 - x1) % (v1 - v2) === 0) {
     return 'YES'
   } else {
-    return ''
+    return 'NO'
   }
 }
 
