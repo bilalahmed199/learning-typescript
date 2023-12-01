@@ -18,8 +18,11 @@ function designerPdfViewer(h: number[], word: string): number {
   let keyInWord: string[] = word.split('')
   // console.log(keyInWord)
 
+  // find word charactors in dictionary (Object)
   let wordValue: number[] = []
+  // iterate over dictionary
   for (let key in obj) {
+    // iterating over keyInWord to compare both
     keyInWord.forEach((num) => {
       if (key === num) {
         wordValue.push(obj[key])
