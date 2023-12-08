@@ -13,7 +13,6 @@ function migratoryBirds(arr: number[]): number {
 
   let maxBirdSighted
   let maxBirdSightedCount = 0
-  let minBirdIdSighted
   let maxBirdsObj: { [key: string]: number } = {}
   for (let birdId in birdsDict) {
     if (birdsDict[birdId] > maxBirdSightedCount) {
