@@ -25,7 +25,6 @@ for (let [key, value] of d.entries()) {
     break
   }
 }
-
 /////////////// method 2: using Map example 2////////////////////////
 let stringArray: string[] = ['a', 'b', 'c', 'd', 'e']
 let numArray: number[] = [1, 3, 2, 5, 9]
